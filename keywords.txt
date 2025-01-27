@@ -1,0 +1,10 @@
+pyar: 3
+nahin: 3
+main: 2
+tumse: 2
+karta: 2
+kya: 1
+aap: 1
+humse: 1
+karte: 1
+hain: 1
