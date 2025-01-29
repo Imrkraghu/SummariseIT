@@ -1,6 +1,6 @@
-hello: 1
-software: 1
-engineer: 1
-working: 1
-iit: 1
-mandi: 1
+hello
+software
+engineer
+working
+iit
+mandi
