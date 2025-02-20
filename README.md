@@ -38,9 +38,10 @@ The project is divided into three modules:
 - **module3.ipynb**: Demonstrates how to extract keywords and create notes using the BERT model.
 
 ### Files
-
+-**dataset.csv**: Contains the words which can be considered as the keywords to find match during a conversation.
 - **recorded_audio.wav**: Contains the recorded audio and is updated each time a new recording is made.
 - **transcription.txt**: Stores the transcription of the recorded audio and is updated each time a new recording is made.
+- **keywords.txt**: Keywords extracted from the transcription of the voice input which is then used by BERT model to generate summary from wikipedia information.
 
 ### User Interface
 
