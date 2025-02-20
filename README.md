@@ -47,5 +47,3 @@ The project is divided into three modules:
 The main file uses Gradio to run a local web server and provide a user interface for interaction.
 
 ---
-
-I hope this helps! If you need any further modifications or have more questions, feel free to ask.
