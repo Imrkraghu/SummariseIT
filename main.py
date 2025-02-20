@@ -101,8 +101,8 @@ iface = gr.Interface(
     fn=main_interface,
     inputs=gr.Audio(type="filepath"),
     outputs="text",
-    title="Audio to Wikipedia Summary",
-    description="Upload an audio file, extract key topics, and get Wikipedia-based summaries.",
+    title="SummariseIT",
+    description="Record a conversation, extract keywords , and get summaries of the keywords .",
 )
 
 # Launch Gradio app
