@@ -1,4 +1,4 @@
-Here's the revised version of your README file for the SummariseIT project:
+Great! Here's the updated README file with the mention of the BERT model:
 
 ---
 
@@ -35,10 +35,17 @@ The project is divided into three modules:
 
 - **module1.ipynb**: Explains the initial setup and basic functionalities.
 - **module2.ipynb**: Covers voice-to-text conversion details.
-- **module3.ipynb**: Demonstrates how to extract keywords and create notes.
+- **module3.ipynb**: Demonstrates how to extract keywords and create notes using the BERT model.
+
+### Files
+
+- **recorded_audio.wav**: Contains the recorded audio and is updated each time a new recording is made.
+- **transcription.txt**: Stores the transcription of the recorded audio and is updated each time a new recording is made.
 
 ### User Interface
 
 The main file uses Gradio to run a local web server and provide a user interface for interaction.
 
 ---
+
+I hope this helps! If you need any further modifications or have more questions, feel free to ask.
