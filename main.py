@@ -22,7 +22,7 @@ bart_model = BartForConditionalGeneration.from_pretrained('facebook/bart-large-c
 bart_tokenizer = BartTokenizer.from_pretrained('facebook/bart-large-cnn')
 
 # Load dataset containing valid keywords
-datapath = r"C:\Users\vishal pal\Desktop\summariseIT\SummariseIT\dataset.csv"
+datapath = r"dataset.csv"
 df = pd.read_csv(datapath)
 
 # Ensure all keywords are lowercase for consistent matching
