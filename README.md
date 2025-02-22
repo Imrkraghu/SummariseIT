@@ -10,21 +10,20 @@ SummariseIT takes voice input and creates notes of keywords in real time. This p
 - All required dependencies are listed in the `requirements.txt` file.
 
 ### Installation
-
 1. Clone the repository.
-2. **Update the package list**: This ensures your package manager has the most recent list of available packages and their versions.
+2. **Install the required dependencies**:
+   ```bash
+   pip install -r requirements.txt
+### Pyaudio Error(failed to build wheel dependancy)
+1. **Update the package list**: This ensures your package manager has the most recent list of available packages and their versions.
    ```bash
    sudo apt-get update
    ```
-3. **Install PortAudio**: PortAudio is a cross-platform, open-source library that provides audio I/O functionality. PyAudio depends on this library to handle audio streams.
+2. **Install PortAudio**: PortAudio is a cross-platform, open-source library that provides audio I/O functionality. PyAudio depends on this library to handle audio streams.
    ```bash
    sudo apt-get install portaudio19-dev
-   ```
-4. **Install the required dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. **Install protobuf (if required)**: Protobuf (Protocol Buffers) is a language-neutral, platform-neutral, extensible mechanism for serializing structured data. Some components of the project may rely on this library for data serialization.
+   ```  ```
+3. **Install protobuf (if required)**: Protobuf (Protocol Buffers) is a language-neutral, platform-neutral, extensible mechanism for serializing structured data. Some components of the project may rely on this library for data serialization.
    ```bash
    pip install protobuf
    ```
