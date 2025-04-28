@@ -13,12 +13,14 @@ import requests
 from bs4 import BeautifulSoup
 import gradio as gr
 
-# Set custom NLTK data path
+# Ensure the folder exists
 NLTK_CUSTOM_PATH = 'nltk_resources'
-nltk.data.path.append(NLTK_CUSTOM_PATH)
-nltk.download('punkt_tab', download_dir=NLTK_CUSTOM_PATH)
+os.makedirs(NLTK_CUSTOM_PATH, exist_ok=True)
 
-# Function to check if an NLTK resource is available
+# Set custom NLTK data path
+nltk.data.path.append(NLTK_CUSTOM_PATH)
+
+# Function to check if a resource exists in the folder
 def is_resource_available(resource_path):
     try:
         nltk.data.find(resource_path)
@@ -26,10 +28,15 @@ def is_resource_available(resource_path):
     except LookupError:
         return False
 
-# Ensure 'punkt' and 'stopwords' are available in nltk_resources, otherwise download them there
+# Check for 'punkt' tokenizer, download if missing
 if not is_resource_available('tokenizers/punkt'):
     nltk.download('punkt', download_dir=NLTK_CUSTOM_PATH)
 
+# Check for 'punkt_tab' tokenizer, download if missing
+if not is_resource_available('tokenizers/punkt_tab'):
+    nltk.download('punkt_tab', download_dir=NLTK_CUSTOM_PATH)
+
+# Check for 'stopwords' corpus, download if missing
 if not is_resource_available('corpora/stopwords'):
     nltk.download('stopwords', download_dir=NLTK_CUSTOM_PATH)
 
