@@ -1,8 +1,8 @@
-## this is the main file which is going to execute 
 import pyaudio
 import wave
 import speech_recognition as sr
 import nltk
+import os
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
@@ -13,9 +13,25 @@ import requests
 from bs4 import BeautifulSoup
 import gradio as gr
 
-# Download necessary NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
+# Set custom NLTK data path
+NLTK_CUSTOM_PATH = 'nltk_resources'
+nltk.data.path.append(NLTK_CUSTOM_PATH)
+nltk.download('punkt_tab', download_dir=NLTK_CUSTOM_PATH)
+
+# Function to check if an NLTK resource is available
+def is_resource_available(resource_path):
+    try:
+        nltk.data.find(resource_path)
+        return True
+    except LookupError:
+        return False
+
+# Ensure 'punkt' and 'stopwords' are available in nltk_resources, otherwise download them there
+if not is_resource_available('tokenizers/punkt'):
+    nltk.download('punkt', download_dir=NLTK_CUSTOM_PATH)
+
+if not is_resource_available('corpora/stopwords'):
+    nltk.download('stopwords', download_dir=NLTK_CUSTOM_PATH)
 
 # Load pre-trained BART model for summarization
 bart_model = BartForConditionalGeneration.from_pretrained('facebook/bart-large-cnn')
@@ -102,7 +118,7 @@ iface = gr.Interface(
     inputs=gr.Audio(type="filepath"),
     outputs="text",
     title="SummariseIT",
-    description="Record a conversation, extract keywords , and get summaries of the keywords .",
+    description="Record a conversation, extract keywords, and get summaries of the keywords.",
 )
 
 # Launch Gradio app
